@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # WARNING: Keep secret key, passwords, and API keys secret in production!
 SECRET_KEY = 'your-secret-key-here-change-in-production'
 DEBUG = True  # Changed to False for production safety
-ALLOWED_HOSTS = ['your-domain.com', 'www.your-domain.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['your-domain.com', 'www.your-domain.com', 'localhost', '127.0.0.1',"*"]  # Update with your domain in production
 
 # APPS
 INSTALLED_APPS = [
@@ -27,6 +27,7 @@ INSTALLED_APPS = [
 # MIDDLEWARE
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -87,26 +88,28 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 # MEDIA FILES
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # EMAIL - REPLACE WITH YOUR CREDENTIALS
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'your-smtp-host.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'your-email@your-domain.com'
-EMAIL_HOST_PASSWORD = 'your-email-password'
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'your-smtp-host.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'your-email@your-domain.com'
+# EMAIL_HOST_PASSWORD = 'your-email-password'
+# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # GOOGLE REVIEWS
-GOOGLE_REVIEW_RATING = 4.7
-GOOGLE_REVIEW_COUNT = 900
-GOOGLE_REVIEW_URL = "https://www.google.com/travel/search?q=worldbyark_pro%20camping%20reviews"
+# GOOGLE_REVIEW_RATING = 4.7
+# GOOGLE_REVIEW_COUNT = 900
+# GOOGLE_REVIEW_URL = "https://www.google.com/travel/search?q=worldbyark_pro%20camping%20reviews"
 
-# RECAPTCHA - REPLACE WITH YOUR KEYS
-RECAPTCHA_SITE_KEY = "your-recaptcha-site-key"
-RECAPTCHA_SECRET_KEY = "your-recaptcha-secret-key"
+# # RECAPTCHA - REPLACE WITH YOUR KEYS
+# RECAPTCHA_SITE_KEY = "your-recaptcha-site-key"
+# RECAPTCHA_SECRET_KEY = "your-recaptcha-secret-key"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

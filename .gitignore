@@ -13,13 +13,13 @@ ENV/
 .DS_Store
 
 # Database
-db.sqlite3
+
 
 # User uploads
-media/
+
 
 # Static files (collected)
-staticfiles/
+
 
 # Environment variables
 .env
@@ -40,4 +40,3 @@ htmlcov/
 .vscode/
 .idea/
 
-static/*.mp4
