@@ -1,0 +1,63 @@
+{% extends 'frontend/base.html' %}
+{% load static %}
+{% block content %}
+<div class="page-content">
+
+        <!-- INNER PAGE BANNER -->
+        <div class="wt-bnr-inr overlay-wraper bg-center">
+            <div class="overlay-main innr-bnr-olay"></div>
+            <div class="wt-bnr-inr-entry">
+                <div class="banner-title-outer">
+                    <div class="banner-title-name">
+                        <h2 class="wt-title">Error 404</h2>
+                    </div>
+                    <!-- BREADCRUMB ROW -->                            
+                    <div>
+                        <ul class="wt-breadcrumb breadcrumb-style-2">
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li>Error 404</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- BREADCRUMB ROW END -->                        
+            </div>
+            <div class="trv-inr-bnr-cloud">            
+                <div class="marquee">
+                    <img src="{% static 'assets/images/inr-banner-cloud.png' %}" alt="Image">
+                </div>
+            </div>
+            <div class="trv-inr-bnr-plane">
+                <div class="trv-inr-bnr-plane-bx"><img src="{% static 'assets/images/airplane.png' %}" alt="Image"></div>
+                
+            </div>
+            <div class="trv-inr-bnr-bloon-1"><img src="{% static 'assets/images/hotballon-Left.png' %}" alt="Image"></div>
+            <div class="trv-inr-bnr-bloon-2"><img src="{% static 'assets/images/hotballon-right.png' %}" alt="Image"></div>
+        </div>
+        <!-- INNER PAGE BANNER END -->
+
+        <!-- Error SECTION START -->
+        <div class="section-full page-notfound-outer p-t120" style="background-image: url(images/error-bg-cloud.png);">
+            <div class="container">
+                <div class="section-content page-notfound-inner">
+                    <div class="page-notfound">
+                        
+                        <div class="page-notfound-content">
+                            <span class="trv-404-sub-title">Oops!</span>
+                            <h1 class="error-title">4<img src="{% static 'assets/images/hotballon-error.png' %}" alt="Image">4</h1>
+                            <div class="page-notfound-info">
+                                <h2 class="error-comment">Page Not Found</h2>
+                                <p>The page you're looking for isn't available. Try to search again or use the go to. </p>
+                                <a href="{% url 'home' %}" class="site-button ">Back to Home</a>
+                            </div>
+                        </div>
+
+                        <div class="page-notfound-media">
+                            <img src="{% static 'assets/images/error-bg.png' %}" alt="">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>   
+        <!-- Error  SECTION END -->
+{% endblock %}

@@ -1,0 +1,147 @@
+{% extends 'frontend/base.html' %}
+{% load static %}
+{% block content %}
+<div class="page-content">
+
+        <!-- INNER PAGE BANNER -->
+        <div class="wt-bnr-inr overlay-wraper bg-center">
+            <div class="overlay-main innr-bnr-olay"></div>
+            <div class="wt-bnr-inr-entry">
+                <div class="banner-title-outer">
+                    <div class="banner-title-name">
+                        <h2 class="wt-title">Contact Us</h2>
+                    </div>
+                    <!-- BREADCRUMB ROW -->                            
+                    <div>
+                        <ul class="wt-breadcrumb breadcrumb-style-2">
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li>Contact Us</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- BREADCRUMB ROW END -->                        
+            </div>
+            <div class="trv-inr-bnr-cloud">            
+                <div class="marquee">
+                    <img src="{% static 'assets/images/inr-banner-cloud.png' %}" alt="Image">
+                </div>
+            </div>
+            <div class="trv-inr-bnr-plane">
+                <div class="trv-inr-bnr-plane-bx"><img src="{% static 'assets/images/airplane.png' %}" alt="Image"></div>
+                
+            </div>
+            <div class="trv-inr-bnr-bloon-1"><img src="{% static 'assets/images/hotballon-Left.png' %}" alt="Image"></div>
+            <div class="trv-inr-bnr-bloon-2"><img src="{% static 'assets/images/hotballon-right.png' %}" alt="Image"></div>
+        </div>
+        <!-- INNER PAGE BANNER END -->
+    
+        <!--CONTACT US SECTION START-->
+        <div class="trv-contact-us-wrap">
+            <div class="trv-contact-us-mid">
+                <!-- GOOGLE MAP -->
+                <div class="g-map-wrap">
+                    <div class="gmap-outline">
+                        <div class="google-map">
+                            <div style="width: 100%">
+                                <iframe height="600" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.272796714594!2d-87.64937353634511!3d41.90849403896016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd324fc400797%3A0x76a989827d7eb84e!2s853%20W%20Blackhawk%20St%2C%20Chicago%2C%20IL%2060642%2C%20USA!5e0!3m2!1sen!2sin!4v1745326667544!5m2!1sen!2sin"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xxl-6 col-xl-5 col-lg-5 col-md-12">
+                        <div class="trv-form">
+                            <!-- TITLE START-->
+                            <div class="section-head trv-head-title-wrap left-position">
+                                <h2 class="trv-head-title"><span class="site-text-yellow">Reach</span> & Get in Touch With Us!</h2>
+                                <div class="trv-head-discription">We’love to hear from you. Our friendly team is always here to chat</div>
+                            </div>
+                            <!-- TITLE END-->
+                            <form class="trv-cons-contact-form" method="post" action="phpmailer/mail.php">
+                                <div class="form-group">
+                                    <input class="form-control" name="username" type="text" placeholder="Enter Your Name">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" name="email" type="text" placeholder="Enter Email Address">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" name="subject" type="text" placeholder="Select Your Subject">
+                                </div>
+                                <div class="form-group">
+                                    <textarea  class="form-control"  name="message" placeholder="Message"></textarea>
+                                </div>
+                                <button type="submit" class="site-button butn-bg-shape">Send Message</button>
+                            </form>
+                            
+                        </div>
+                    </div>
+                    <div class="col-xxl-6 col-xl-7 col-lg-7 col-md-12">
+                        <div class="trv-contact-us-detail-wrap">
+                            <div class="trv-contact-us-detail">
+                                <!-- TITLE START-->
+                                <div class="section-head trv-head-title-wrap left-position">
+                                    <h2 class="trv-head-title">Contact Us <span class="site-text-yellow">Detail</span></h2>
+                                    <div class="trv-head-discription">
+                                        Travlla is a multi-award-winning strategy and content creation agency that specializes in travel marketing. 
+                                    </div>
+                                </div>
+                                <!-- TITLE END-->
+
+                                <ul class="trv-contact-list">
+                                    <li>
+                                        <div class="trv-contact-info">
+                                            <div class="media">
+                                                <div class="white-circle">
+                                                    <i class="feather feather-phone-call"></i>
+                                                </div>
+                                            </div>
+                                            <div class="info">
+                                                <span class="title">Phone</span>
+                                                <h6 class="text">+91 81 38 999 007</h6>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="trv-contact-info icon-2">
+                                            <div class="media">
+                                                <div class="white-circle">
+                                                    <i class="feather feather-mail"></i>
+                                                </div>
+                                            </div>
+                                            <div class="info">
+                                                <span class="title">Email</span>
+                                                <h6 class="text">info@worldbyark.com</h6>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="trv-contact-info icon-3">
+                                            <div class="media">
+                                                <div class="white-circle">
+                                                    <i class="feather feather-home"></i>
+                                                </div>
+                                            </div>
+                                            <div class="info">
+                                                <span class="title">Address</span>
+                                                <h6 class="text">Junior Janatha Road, Vyttila, Kochi-682 019, Kerala, India.</h6>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <div class="trv-con-media">
+                                    <h3 class="trv-con-title">Let's <span>Talk</span> About You !</h3>
+                                </div>
+                            </div>
+                            <img src="{% static 'assets/images/Image-cont.png' %}" alt="Image" class="trv-con-pic">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--CONTACT US SECTION END-->
+
+
+    </div>
+    <!-- CONTENT END -->
+{% endblock %}

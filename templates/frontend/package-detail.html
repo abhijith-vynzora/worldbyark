@@ -1,0 +1,348 @@
+{% extends 'frontend/base.html' %}
+{% load static %}
+{% block content %}
+<div class="page-content">
+
+        <!-- INNER PAGE BANNER -->
+        <div class="wt-bnr-inr overlay-wraper bg-center">
+            <div class="overlay-main innr-bnr-olay"></div>
+            <div class="wt-bnr-inr-entry">
+                <div class="banner-title-outer">
+                    <div class="banner-title-name">
+                        <h2 class="wt-title">Package Details</h2>
+                    </div>
+                    <!-- BREADCRUMB ROW -->                            
+                    <div>
+                        <ul class="wt-breadcrumb breadcrumb-style-2">
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li>Package Details</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- BREADCRUMB ROW END -->                        
+            </div>
+            <div class="trv-inr-bnr-cloud">            
+                <div class="marquee">
+                    <img src="{% static 'assets/images/inr-banner-cloud.png' %}" alt="Image">
+                </div>
+            </div>
+            <div class="trv-inr-bnr-plane">
+                <div class="trv-inr-bnr-plane-bx"><img src="{% static 'assets/images/airplane.png' %}" alt="Image"></div>
+                
+            </div>
+            <div class="trv-inr-bnr-bloon-1"><img src="{% static 'assets/images/hotballon-Left.png' %}" alt="Image"></div>
+            <div class="trv-inr-bnr-bloon-2"><img src="{% static 'assets/images/hotballon-right.png' %}" alt="Image"></div>
+        </div>
+        <!-- INNER PAGE BANNER END -->
+
+        <!-- SECTION START -->
+        <div class="section-full  p-t120 p-b90">
+            <div class="container">
+            
+                <!-- SECTION START -->
+                <div class="section-content">
+                    <div class="row d-flex justify-content-center">
+
+                        <div class="col-xl-8 col-lg-8 col-md-12 m-b30">
+                            <div class="trv-detail-main-wrap">
+                                
+                                <!--Info Start-->
+                                <div class="trv-detail-bx-wrap">
+
+                                    <div class="trv-inr-para2">
+                                        <div class="trv-sep-rating">
+                                            <div class="trv-rating">
+                                                <span>(4.8 Review)</span>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                            </div>
+                                        </div>
+                                        <h3 class="trv-inner-title-lg">{{ package.name }}</h3>
+
+                                        <span class="trv-packege-esti-time">{{ package.duration }}</span>
+
+                                        
+
+                                        <!--Top Slider-->
+                                        <div class="trv-detail-slider">
+                                            <div class="swiper trv_d-slider">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide">
+                                                        <div class="trv_d-slider-media">
+                                                            <img src="{{ package.main_image.url }}" alt="{{ package.name }}">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-pagination"></div>
+                                            </div>
+                                        </div>
+                                        <!--Top Slider End-->
+
+                                        <!-- Navigation -->
+                                        <nav class="navbar-one">
+                                            <a href="#overview">Overview</a>
+                                            <a href="#itinerary">Day Wise Itinerary</a>
+                                            <a href="#inclusions">Inclusions / Exclusions</a>
+                                            <a href="#TermCondition">Term & Condition</a>
+                                        </nav>
+
+                                        <!-- Over View-->
+                                        <section id="overview">
+
+                                            <h3 class="trv-inner-title-sm">Package Overview</h3>
+                                            {{ package.description|linebreaks }}
+
+                                            {% if package.highlights_list %}
+                                            <h3 class="trv-inner-title-sm">Highlights</h3>
+                                            <ul class="trv-checklist-st1">
+                                                {% for highlight in package.highlights_list %}
+                                                <li><i class="bi bi-check-circle-fill"></i>{{ highlight }}</li>
+                                                {% endfor %}
+                                            </ul>
+                                            {% endif %}
+
+                                        </section>
+
+                                        <!-- Day Wise Itinerary-->
+                                        <section id="itinerary">
+
+                                            <h3 class="trv-inner-title-sm">Day Wise Itinerary</h3>
+                                        
+                                            {% if package.highlights_list %}
+                                            <div class="trv-clist-st-3-wrap">
+                                                <ul class="trv-list-st-3">
+                                                    {% for item in package.highlights_list %}
+                                                    <li>
+                                                        <div class="trv-list-content">
+                                                            <div class="duration">
+                                                                <div class="media">
+                                                                    <div class="green-bg">{{ forloop.counter|stringformat:"02d" }}</div>
+                                                                </div>
+                                                                <span class="day">DAY</span>
+                                                            </div>
+                                                            <div class="info">
+                                                                <h4 class="trv-title">{{ item }}</h4>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                            {% else %}
+                                            <p class="text-muted">Itinerary details will be provided upon booking confirmation.</p>
+                                            {% endif %}
+
+                                        </section>
+
+                                        <!-- Inclusion/Exclusions-->
+                                        <section id="inclusions">
+                                            <div class="trv-checklist-st2-mini-wrap">
+                                                <div class="row">
+                                                    <div class="col-xl-6 col-lg-12 col-md-12 trv-checklist-st2-mini-l">
+                                                        <h3 class="trv-inner-title-sm">Inclusions</h3>
+                                                        <ul class="trv-checklist-st2-mini">
+                                                            {% for item in package.inclusions_list %}
+                                                            <li>
+                                                                <i class="bi bi-check-circle-fill"></i>
+                                                                {{ item }}
+                                                            </li>
+                                                            {% empty %}
+                                                            <li><i class="bi bi-check-circle-fill"></i>Accommodation included</li>
+                                                            {% endfor %}
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-xl-6 col-lg-12 col-md-12 trv-checklist-st2-mini-r">
+                                                        <h3 class="trv-inner-title-sm">Exclusions</h3>
+                                                        <ul class="trv-checklist-st2-mini trv-list-disable">
+                                                            <li>
+                                                                <i class="bi bi-x-circle-fill"></i>
+                                                                The cost of the Airfare, Passport, POE charges, Visa charges, Overseas Travel Insurance, etc.
+                                                            </li>
+                                                            <li>
+                                                                <i class="bi bi-x-circle-fill"></i>
+                                                                Any expenses of personal nature such as Porterage, Laundry, and Alcohol, Food or Drink not in the regular menus provided by us, mini bar and telephone calls
+                                                            </li>
+                                                            <li>
+                                                                <i class="bi bi-x-circle-fill"></i>
+                                                                Any extra meals not included in the itinerary. Meals are pre - set and a choice of menu is not available
+                                                            </li>
+                                                            <li>
+                                                                <i class="bi bi-x-circle-fill"></i>
+                                                                Cost of excursions, city sightseeing, entrance fees and local guides availed of by the passengers, other than that mentioned in ‘What your tour price includes’
+                                                            </li>
+                                                            <li>
+                                                                <i class="bi bi-x-circle-fill"></i>
+                                                               GST, TCS and other taxes as applicable.
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                        
+                                            </div>
+
+                                        </section>
+
+                                        <section id="TermCondition">
+                                            <h4 class="trv-inner-title-sm">Term & Condition</h4>
+                                            <div class="trv-de-list-st1">
+                                                <ul class="trv-list-st-1">
+                                                    <li>
+                                                        <h4 class="title">Travel Validity</h4>
+                                                        <p class="text">
+                                                            The deal is valid for travel till 31st October 2026.
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <h4 class="title">Guaranteed Dates</h4>
+                                                        <p class="text">
+                                                           Your selected travel dates are guaranteed. In the unlikely event of seats sold out, we guarantee +/- 1/2 days from your preferred dates.
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <h4 class="title">High Season</h4>
+                                                        <p class="text">Prices can fluctuate during peak season dates.
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <h4 class="title">Visa Easy</h4>
+                                                        <p class="text">Visa assistance will be provided by our visa specialists.
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <h4 class="title">Remarks</h4>
+                                                        <p class="text">The exchange rate of Euro is subject to fluctuation and hence final cost will be calculated at the rate prevailing on the date of final payment.
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <h4 class="title">Easy Cancellation</h4>
+                                                        <p class="text">*46 and More Days prior to the Departure Date: Booking Amount is Non-Refundable . *45 to 31 Days prior to the Departure Date: 60% of the full Tour cost . *30 to 21 Days prior to the Departure Date: 80% of the full Tour cost *20 Days prior to the Departure Date: 100% of the full Tour cost
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <h4 class="title">Booking Policy</h4>
+                                                        <p class="text">At the time of booking: 30% of the total package cost per person or cancellation charges whichever is higher (non-refundable and non-transferable)
+                                                        </p>
+                                                        <p class="text">Within 60 Days from Date of Departure: 50% of Full Tour Cost or cancellation charges whichever is higher (non-refundable and non-transferable) 
+                                                        </p>
+                                                        <p class="text">Within 45 Days from Departure Date: 75% of Full Tour Cost or cancellation charges whichever is higher (non-refundable and non-transferable) 
+                                                        </p>
+                                                        <p class="text">Please Note: For Issuance of the Flight Tickets, we require Full Payment of Airfare
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <h4 class="title">Remarks</h4>
+                                                        <p class="text">Prices can fluctuate during peak season dates.</p>
+                                                        <p class="text">Confirmation is subject to availability at the time of booking </p>
+                                                    </li>
+                                                    <li>
+                                                        <h4 class="title">Highlights</h4>
+                                                        <p class="text">Disneyland® Paris</p>
+                                                        <p class="text">Keukenhof Gardens</p>
+                                                        <p class="text">Tour Manager</p>
+                                                    </li>
+                                                    
+                                                    
+                                                </ul>
+                                            </div>
+                                        </section>
+
+                                    </div>
+
+                                </div>
+                            </div> 
+                        </div> 
+
+                        <!-- SIDE BAR START -->
+                        <div class="col-xl-4 col-lg-4 col-md-12 rightSidebar  m-b30">
+                        
+                            <aside  class="side-bar">
+                                 
+                                <div class="trv-tour-single-r-detail">
+                                    <span class="trv-star-from">Starting from</span>
+                                    <span class="trv-star-amount">
+                                        {{ package.price_from }}
+                                    </span>
+                                    <span class="trv-star-from-person">/ Person</span>
+                                    <div class="trv-emi_text">
+                                        <i class="bi bi-wallet"></i>No Cost EMI Starts from
+                                        <span class="trvng-binding"> $<span class="trvng-binding">49</span></span> 
+                                        <a class="chsemi" href="javascript:;">See option</a>
+                                        
+                                    </div>
+                                    <button type="button" class="site-button butn-bg-shape" data-bs-toggle="modal" data-bs-target="#exampleModal" >Enquire Now</button>
+                                </div>
+
+                                <div class="trv-tour-single-r-info">
+                                    <div class="trv-main-rg-hol">
+                                        <div class="trv-man-sec-hol">
+                                            <ul>
+                                                <li>
+                                                    <span class="trv-tmi-hlo"><i class="bi bi-clock"></i> Duration : </span>
+                                                    <span class="ng-binding">{{ package.duration }}</span>
+                                                </li>
+                                                <li>
+                                                    <span class="trv-tmi-hlo"><i class="bi bi-geo-alt"></i> Destination :</span>
+                                                    <span class="trv-tmi-hlo-info">{{ package.name }}</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="trv-oack-sepa"><span class="lay"> Package Includes</span></div>
+                                        
+                                        <div class="trv-icon-man-holids">
+                                            <ul>
+
+                                                <li>
+                                                    <div class="trv-holids-icon">
+                                                        <img src="{% static 'assets/images/holi-icon/hotels.png' %}" alt="Hotal">
+                                                    </div>
+                                                    <div class="trv-holids-name">Hotel</div>
+                                                </li>
+                                                <li>
+                                                    <div class="trv-holids-icon">
+                                                        <img src="{% static 'assets/images/holi-icon/Sightseeing.png' %}" alt="Sightseeing">
+                                                    </div>
+                                                    <div class="trv-holids-name">Sightseeing</div>
+                                                </li>
+                                                <li>
+                                                    <div class="trv-holids-icon">
+                                                        <img src="{% static 'assets/images/holi-icon/car.png' %}" alt="car">
+                                                    </div>
+                                                    <div class="trv-holids-name">Transfer</div>
+                                                </li>
+                                                <li>
+                                                    <div class="trv-holids-icon">
+                                                        <img src="{% static 'assets/images/holi-icon/meal.png' %}" alt="Meal">
+                                                    </div>
+                                                    <div class="trv-holids-name">Meal</div>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+     
+                            </aside>
+
+                        </div>
+                        <!-- SIDE BAR END -->
+                    
+                    </div>
+
+                </div>
+                
+            </div>
+            
+        </div>   
+        <!-- SECTION END --> 
+
+
+
+
+
+    </div>
+    <!-- CONTENT END -->
+{% endblock %}

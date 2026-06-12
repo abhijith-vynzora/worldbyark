@@ -1,0 +1,240 @@
+{% extends 'frontend/base.html' %}
+{% load static %}
+{% block content %}
+<div class="page-content">
+
+        <!-- INNER PAGE BANNER -->
+        <div class="wt-bnr-inr overlay-wraper bg-center">
+            <div class="overlay-main innr-bnr-olay"></div>
+            <div class="wt-bnr-inr-entry">
+                <div class="banner-title-outer">
+                    <div class="banner-title-name">
+                        <h2 class="wt-title">Gallery</h2>
+                    </div>
+                    <!-- BREADCRUMB ROW -->                            
+                    <div>
+                        <ul class="wt-breadcrumb breadcrumb-style-2">
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li>Gallery</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- BREADCRUMB ROW END -->                        
+            </div>
+            <div class="trv-inr-bnr-cloud">            
+                <div class="marquee">
+                    <img src="{% static 'assets/images/inr-banner-cloud.png' %}" alt="Image">
+                </div>
+            </div>
+            <div class="trv-inr-bnr-plane">
+                <div class="trv-inr-bnr-plane-bx"><img src="{% static 'assets/images/airplane.png' %}" alt="Image"></div>
+                
+            </div>
+            <div class="trv-inr-bnr-bloon-1"><img src="{% static 'assets/images/hotballon-Left.png' %}" alt="Image"></div>
+            <div class="trv-inr-bnr-bloon-2"><img src="{% static 'assets/images/hotballon-right.png' %}" alt="Image"></div>
+        </div>
+        <!-- INNER PAGE BANNER END -->
+    
+        <!--GALLERY SECTION START-->
+        <div class="section-full trv-gallery-wrap p-t120 p-b90">
+            <div class="container">
+
+                <!-- TITLE START-->
+                    <div class="section-head trv-head-title-wrap center-position">
+                        <h2 class="trv-head-title">Best Memorable<span class="site-text-yellow"> Gallery!</span></h2>
+                        <div class="trv-head-discription">Destinations worth exploring! Here are a few popular spots</div>
+                        <div class="trv-head-title-image">
+                            <img src="{% static 'assets/images/background/Title-Separator.png' %}" alt="Image">
+                        </div>
+                    </div>
+                <!-- TITLE END-->
+
+                <div class="section-content">
+
+                    <div class="trv-gallery-section row">
+
+                        <!-- COLUMNS 1 -->
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6">
+                            <div class="trv-gallery-st1 l-pic">
+                                <div class="trv-gallery-st1-media">
+                                    <img src="{% static 'assets/images/gallery/l-pic1.jpg' %}" alt="image">
+                                    <a class="elem trv-gallery-st1-btn" href="{% static 'assets/images/gallery/l-pic1.jpg' %}" title="Bali Indonesia" data-lcl-txt="" data-lcl-author="" data-lcl-thumb="images/gallery/l-pic1.jpg"><i class="bi bi-arrows-fullscreen"></i>    
+                                    </a>
+                                </div>
+                            </div> 
+                            <div class="trv-gallery-st1 l-pic">
+                                <div class="trv-gallery-st1-media">
+                                    <img src="{% static 'assets/images/gallery/l-pic2.jpg' %}" alt="image">
+                                    <a class="elem trv-gallery-st1-btn" href="{% static 'assets/images/gallery/l-pic2.jpg' %}" title="Spain" data-lcl-txt="" data-lcl-author="" data-lcl-thumb="images/gallery/l-pic2.jpg"><i class="bi bi-arrows-fullscreen"></i>    
+                                    </a>
+                                </div>
+                            </div>                      
+                        </div>
+
+                        <!-- COLUMNS 2 -->
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6  col-6">
+                            <div class="trv-gallery-st1 p-pic">
+                                <div class="trv-gallery-st1-media">
+                                    <img src="{% static 'assets/images/gallery/p-pic1.jpg' %}" alt="image">
+                                    <a class="elem trv-gallery-st1-btn" href="{% static 'assets/images/gallery/p-pic1.jpg' %}" title="Plateau in Slovenia" data-lcl-txt="" data-lcl-author="" data-lcl-thumb="images/gallery/p-pic1.jpg"><i class="bi bi-arrows-fullscreen"></i>    
+                                    </a>
+                                </div>
+                            </div> 
+                        </div>
+
+                        <!-- COLUMNS 3 -->
+                        <div class="col-xl-4 col-lg-4 col-md-4">
+                            <div class="trv-gallery-st1-box">
+                                <div class="trv-media">
+                                    <img src="{% static 'assets/images/gallery/lady.png' %}" alt="Image">
+                                </div>
+                            </div> 
+                        </div>
+                        
+                        <!-- COLUMNS 4 -->
+                        <div class="col-xl-8 col-lg-8 col-md-6 col-sm-12">
+                            <div class="trv-gallery-st1 l-pic">
+                                <div class="trv-gallery-st1-media">
+                                    <img src="{% static 'assets/images/gallery/l-pic3.jpg' %}" alt="image">
+                                    <a class="elem trv-gallery-st1-btn" href="{% static 'assets/images/gallery/l-pic3.jpg' %}" title="Brazil" data-lcl-txt="" data-lcl-author="" data-lcl-thumb="images/gallery/l-pic3.jpg"><i class="bi bi-arrows-fullscreen"></i>    
+                                    </a>
+                                </div>
+                            </div> 
+                        </div>
+                        
+                        <!-- COLUMNS 5 -->
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                            <div class="row">
+                                <div class=" col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                                    <div class="trv-gallery-st1 l-pic">
+                                        <div class="trv-gallery-st1-media">
+                                            <img src="{% static 'assets/images/gallery/p-pic2.jpg' %}" alt="image">
+                                            <a class="elem trv-gallery-st1-btn" href="{% static 'assets/images/gallery/p-pic2.jpg' %}" title="Indonesia" data-lcl-txt="" data-lcl-author="" data-lcl-thumb="images/gallery/p-pic2.jpg"><i class="bi bi-arrows-fullscreen"></i>    
+                                            </a>
+                                        </div>
+                                    </div> 
+                                </div>
+                                <div class=" col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                                    <div class="trv-gallery-st1 l-pic">
+                                        <div class="trv-gallery-st1-media">
+                                            <img src="{% static 'assets/images/gallery/p-pic3.jpg' %}" alt="image">
+                                            <a class="elem trv-gallery-st1-btn" href="{% static 'assets/images/gallery/p-pic3.jpg' %}" title="Maldivas" data-lcl-txt="" data-lcl-author="" data-lcl-thumb="images/gallery/p-pic3.jpg"><i class="bi bi-arrows-fullscreen"></i>    
+                                            </a>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                            
+                    </div>
+
+                    
+                    <div class="trv-btm-title2-section">
+                        <span>Explore the Most  Beautiful</span>
+                        <h2 class="trv-btm-title-large">Place in the World</h2>
+                    </div>
+                    
+                        
+                </div> 
+
+            </div>
+        </div>
+        <!--GALLERY TOUR SECTION END-->
+
+        <!-- CATEGORY SECTION -->
+        <div class="section-full trv-rev-gallary-wrap p-b90">
+            <div class="owl-carousel twm-category-carousal-slider2">
+                <!-- COLUMN 1 -->
+                <div class="item">
+                <div class="trv-gallery-rev-st1">
+                        <div class="trv-gallery-rev-st1-media">
+                            <img src="{% static 'assets/images/gallery-2/pic1.jpg' %}" alt="Image">
+                        </div>
+                    </div>
+                </div>
+                <!-- COLUMN 2 -->
+                <div class="item">
+                <div class="trv-gallery-rev-st1">
+                        <div class="trv-gallery-rev-st1-media">
+                            <img src="{% static 'assets/images/gallery-2/pic2.jpg' %}" alt="Image">
+                        </div>
+                    </div>
+                </div>
+                <!-- COLUMN 3 -->
+                <div class="item">
+                <div class="trv-gallery-rev-st1">
+                        <div class="trv-gallery-rev-st1-media">
+                            <img src="{% static 'assets/images/gallery-2/pic3.jpg' %}" alt="Image">
+                        </div>
+                    </div>
+                </div>
+                <!-- COLUMN 4 -->
+                <div class="item">
+                <div class="trv-gallery-rev-st1">
+                        <div class="trv-gallery-rev-st1-media">
+                            <img src="{% static 'assets/images/gallery-2/pic4.jpg' %}" alt="Image">
+                        </div>
+                    </div>
+                </div>
+                <!-- COLUMN 5 -->
+                <div class="item">
+                <div class="trv-gallery-rev-st1">
+                        <div class="trv-gallery-rev-st1-media">
+                            <img src="{% static 'assets/images/gallery-2/pic5.jpg' %}" alt="Image">
+                        </div>
+                    </div>
+                </div>
+                <!-- COLUMN 6 -->
+                
+            </div>
+            <div class="owl-carousel twm-category-carousal-slider">
+                <!-- COLUMN 1 -->
+                <div class="item">
+                <div class="trv-gallery-rev-st1">
+                        <div class="trv-gallery-rev-st1-media">
+                            <img src="{% static 'assets/images/gallery-2/pic6.jpg' %}" alt="Image">
+                        </div>
+                    </div>
+                </div>
+                <!-- COLUMN 2 -->
+                <div class="item">
+                <div class="trv-gallery-rev-st1">
+                        <div class="trv-gallery-rev-st1-media">
+                            <img src="{% static 'assets/images/gallery-2/pic7.jpg' %}" alt="Image">
+                        </div>
+                    </div>
+                </div>
+                <!-- COLUMN 3 -->
+                <div class="item">
+                <div class="trv-gallery-rev-st1">
+                        <div class="trv-gallery-rev-st1-media">
+                            <img src="{% static 'assets/images/gallery-2/pic8.jpg' %}" alt="Image">
+                        </div>
+                    </div>
+                </div>
+                <!-- COLUMN 4 -->
+                <div class="item">
+                <div class="trv-gallery-rev-st1">
+                        <div class="trv-gallery-rev-st1-media">
+                            <img src="{% static 'assets/images/gallery-2/pic9.jpg' %}" alt="Image">
+                        </div>
+                    </div>
+                </div>
+                <!-- COLUMN 5 -->
+                <div class="item">
+                <div class="trv-gallery-rev-st1">
+                        <div class="trv-gallery-rev-st1-media">
+                            <img src="{% static 'assets/images/gallery-2/pic10.jpg' %}" alt="Image">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- CATEGORY END -->
+
+    </div>
+    <!-- CONTENT END -->
+{% endblock %}
